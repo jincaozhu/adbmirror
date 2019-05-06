@@ -64,7 +64,7 @@ class Main():
         pygame.init()
         pygame.font.init()
 
-        self.screen = pygame.display.set_mode(self.size, pygame.FULLSCREEN | pygame.HWSURFACE)
+        self.screen = pygame.display.set_mode(self.size,  pygame.HWSURFACE)
         pygame.display.set_caption("adbmirror")
  
         self.color = (200, 200, 200)
@@ -231,7 +231,7 @@ class Main():
     
     def run(self):
         self.running = True
-        self.adb.write(["landscape"])
+        self.adb.write(["portrait"])
 
         self.screen_update = True
         self.frame_update = False
