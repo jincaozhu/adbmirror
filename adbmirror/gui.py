@@ -22,7 +22,7 @@ class Main():
         assert len(sys.argv) == 4
         self.size = map(int, sys.argv[1].split("x"))
         orig = map(int, sys.argv[2].split("x"))
-        self.orig = orig[1], orig[0]
+        self.orig = orig[0], orig[1]
         self.path = sys.argv[3]
         
         self.scalel = True
@@ -51,11 +51,11 @@ class Main():
 
         #image scale orig to disp
         self.scale = self.orig[0] / float(self.size[0])
-        self.ratio = self.orig[0] / float(self.orig[1])
+        self.ratio = self.orig[1] / float(self.orig[0])
         #size of raw image in landscape mode
-        self.sizel = self.size[0], int(self.orig[1] / self.scale)
+        self.sizep = self.size[0], int(self.orig[1] / self.scale)
         #size of raw image in portrait mode
-        self.sizep = int(self.orig[1] / self.scale), self.size[0]
+        self.sizel = int(self.orig[1] / self.scale), self.size[0]
 
         self.rotation = 0
 
